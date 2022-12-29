@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ $imageUrl := .Params.image }}
+{{ $image := resources.Get $imageUrl }}
+{{ .Params.title }} <BR>
+<img src="{{ $image.Permalink }}"/>
+{{ end }}
+

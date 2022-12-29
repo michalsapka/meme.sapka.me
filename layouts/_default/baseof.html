@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<HTML>
+  <HEAD>
+    <META charset="utf-8">
+    <TITLE>{{ block "title" . }}
+      {{ .Site.Title }}
+      {{ end }}</TITLE>
+  </HEAD>
+  <BODY>
+    {{ block "header" . }}
+    <HEADER>
+      <h1>{{ .Site.Title }}</h1>
+      because giphy sucks
+      <h2> {{ .Page.Title }}</h2>
+    </HEADER>
+    {{ end }}
+
+    {{ block "main" . }}
+    {{ end }}
+
+    {{ block "FOOTER" . }}
+    <ASIDE>
+      Terms and conditions
+      <OL>
+        <li> I don't care who you are so I wont't track you.
+        <li> I have stolen all those memes so I have no rights to them.
+        <li> You will not kill my server.
+      </OL>
+    <FOOTER>
+      Created by <a href="https://michal.sapka.me" target="_blank">Michal</a>
+      <BR>
+        RSS
+
+    </FOOTER>
+    {{ end }}
+  </BODY>
+</HTML>
