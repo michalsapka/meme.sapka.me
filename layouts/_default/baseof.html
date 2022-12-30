@@ -5,31 +5,108 @@
     <TITLE>{{ block "title" . }}
       {{ .Site.Title }}
       {{ end }}</TITLE>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<STYLE>
+  body {
+    background-color:#020202;
+    color: #f2f2f2;
+    font-family: 'arial';
+    padding: 0;
+    margin: 0;
+  }
+  main {
+    width: 800px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header {
+    background-color: #121212;
+    padding-left: 50px;
+    height:55px;
+  }
+  header div {
+    padding-top: 12px;
+  }
+  header img {
+    margin-top: 2px;
+    position: absolute;
+    left: 5px;
+  }
+  a {
+    text-decoration: none;
+    color: #f2f2f2;
+  }
+  h1 {
+    font-size: 1.5em;
+    display: inline;
+  }
+  h2 {
+    font-size: 1.1em;
+  }
+  h4 {
+    font-size: 1.1em;
+  }
+  article.list {
+    display: inline-block;
+  }
+  article.list img {
+    margin: auto;
+    display: block;
+  }
+  footer {
+    width: 800px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;
+  }
+  footer div {
+    text-align: center;
+  }
+</STYLE>
   </HEAD>
   <BODY>
     {{ block "header" . }}
     <HEADER>
-      <h1>{{ .Site.Title }}</h1>
-      because giphy sucks
-      <h2> {{ .Page.Title }}</h2>
+      {{ $image := resources.Get "logo.png" }}
+      {{ $image := $image.Resize "x45" }}
+      <a href="/">
+      <img src="{{ $image.Permalink }}" width={{$image.Width}} height={{$image.Height}}/>
+        <div>
+          <h1>{{ .Site.Title }}</h1>
+          (because giphy sucks)
+        </div>
+      </a>
     </HEADER>
     {{ end }}
-
+    <MAIN>
+      <h2> {{ .Page.Title }}</h2>
     {{ block "main" . }}
     {{ end }}
+    </MAIN>
 
     {{ block "FOOTER" . }}
+    <FOOTER>
     <ASIDE>
+      <BR>
       Terms and conditions
       <OL>
-        <li> I don't care who you are so I wont't track you.
+        <li> I don't care who you are so I won't track you.
         <li> I have stolen all those memes so I have no rights to them.
         <li> You will not kill my server.
       </OL>
-    <FOOTER>
-      Created by <a href="https://michal.sapka.me" target="_blank">Michal</a>
+    </ASIDE>
+    <div>
+      Created by <a href="https://sapka.me" target="_blank">Michal</a>
       <BR>
-        RSS
+      <BR>
+      <a href="/index.xml">
+        {{ $image := resources.Get "rss.png" }}
+        {{ $image := $image.Resize "x25" }}
+        <img src="{{ $image.Permalink }}" width={{$image.Width}} height={{$image.Height}}/>
+      </a>
+    </div>
 
     </FOOTER>
     {{ end }}

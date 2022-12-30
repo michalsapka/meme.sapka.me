@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-kind: "meme"
+category: "meme"
 date: {{ .Date }}
 draft: true
 image: ""
