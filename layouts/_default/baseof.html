@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<HTML>
+<HTML lang="en">
   <HEAD>
     <META charset="utf-8">
     <TITLE>{{ block "title" . }}
       {{ .Site.Title }}
       {{ end }}</TITLE>
+    <link rel='stylesheet' type='text/css' href='/style.css'>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {{- $image := resources.Get "/icons/apple-touch-icon.png"}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ $image.Permalink }}">
@@ -24,70 +25,10 @@
     <meta name="twitter:image" content="{{ $image.Permalink }}">
     <meta name="twitter:card" content="summary_large_image">
 
-<STYLE>
-  body {
-    background-color:#020202;
-    color: #f2f2f2;
-    font-family: 'arial';
-    padding: 0;
-    margin: 0;
-  }
-  img {
-    max-width: 99%;
-    width: auto;
-    height: auto;
-  }
-  main {
-    width: 800px;
-    max-width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  header {
-    background-color: #121212;
-    padding-left: 50px;
-    height:55px;
-  }
-  header div {
-    padding-top: 12px;
-  }
-  header img {
-    margin-top: 2px;
-    position: absolute;
-    left: 5px;
-  }
-  a {
-    text-decoration: none;
-    color: #f2f2f2;
-  }
-  h1 {
-    font-size: 1.5em;
-    display: inline;
-  }
-  h2 {
-    font-size: 1.1em;
-  }
-  h4 {
-    font-size: 1.1em;
-  }
-  article.list {
-    display: inline-block;
-  }
-  article.list img {
-    margin: auto;
-    display: block;
-  }
-  footer {
-    width: 800px;
-    max-width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.5;
-  }
-  footer div {
-    text-align: center;
-  }
-</STYLE>
+    <link rel="canonical" href="{{ .Site.BaseURL }}">
+    <link rel='alternate' type='application/rss+xml' title="{{ .Site.Title }} RSS" href='/index.xml'>
+    <meta name="robots" content="index, follow">
+    {{ if isset .Params "tags" }}<meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ end }}">{{end}}
   </HEAD>
   <BODY>
     {{ block "header" . }}
