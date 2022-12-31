@@ -2,8 +2,7 @@
 title: ""
 date: 2022-12-28T23:42:51+01:00
 draft: false
-image: ""
+image: "logo.png"
 tags: []
 ---
-Because giphy sucks!
 

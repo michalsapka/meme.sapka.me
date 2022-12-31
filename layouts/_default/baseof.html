@@ -6,6 +6,24 @@
       {{ .Site.Title }}
       {{ end }}</TITLE>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{- $image := resources.Get "/icons/apple-touch-icon.png"}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $image.Permalink }}">
+    {{- $image := resources.Get "/icons/favicon-32x32.png" }}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ $image.Permalink }}">
+    {{- $image := resources.Get "/icons/favicon-16x16.png" }}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ $image.Permalink }}">
+
+    <meta property="og:title" content="{{ .Page.Title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ .Page.Permalink }}" />
+    {{- $imageUrl := default "logo.png" .Params.image }}
+    {{- $image := resources.Get $imageUrl }}
+    <meta property="og:image" content="{{ $image.Permalink }}" />
+
+    <meta name="twitter:title" content="{{ .Page.Title }}">
+    <meta name="twitter:image" content="{{ $image.Permalink }}">
+    <meta name="twitter:card" content="summary_large_image">
+
 <STYLE>
   body {
     background-color:#020202;
