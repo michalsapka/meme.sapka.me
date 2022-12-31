@@ -36,7 +36,7 @@
       {{ $image := resources.Get "logo.png" }}
       {{ $image := $image.Resize "x45" }}
       <a href="/">
-      <img src="{{ $image.Permalink }}" width={{$image.Width}} height={{$image.Height}}/>
+      <img alt="logo" src="{{ $image.Permalink }}" width={{$image.Width}} height={{$image.Height}}/>
         <div>
           <h1>{{ .Site.Title }}</h1>
           (because giphy sucks)
@@ -68,7 +68,7 @@
       <a href="/index.xml">
         {{ $image := resources.Get "rss.png" }}
         {{ $image := $image.Resize "x25" }}
-        <img src="{{ $image.Permalink }}" width={{$image.Width}} height={{$image.Height}}/>
+        <img alt="rss" src="{{ $image.Permalink }}" width={{$image.Width}} height={{$image.Height}}/>
       </a>
     </div>
 

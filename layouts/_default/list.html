@@ -5,7 +5,7 @@
       {{ $imageUrl := .Param "image" }}
       {{ $image := resources.Get $imageUrl }}
       {{ $image := $image.Resize "350x" }}
-      <img src="{{ $image.Permalink }}" width={{ $image.Width }} height={{ $image.Height }}/>
+      <img alt="{{ .Param "title"}}" src="{{ $image.Permalink }}" width={{ $image.Width }} height={{ $image.Height }}/>
       </a>
     </article>
   {{ end }}

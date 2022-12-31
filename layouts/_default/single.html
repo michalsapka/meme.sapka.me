@@ -2,7 +2,7 @@
 {{ $imageUrl := .Params.image }}
 {{ $image := resources.Get $imageUrl }}
 {{ $image := $image.Resize "790x" }}
-<img src="{{ $image.Permalink }}" width={{ $image.Width }} height={{ $image.Height }}/><BR/>
+<img alt="{{ .Params.title }}" src="{{ $image.Permalink }}" width={{ $image.Width }} height={{ $image.Height }}/><BR/>
 added on {{ .PublishDate.Format "January 2, 2006" }}
 {{ end }}
 
