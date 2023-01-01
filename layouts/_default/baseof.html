@@ -45,7 +45,9 @@
     </HEADER>
     {{ end }}
     <MAIN>
+    {{ block "page-title" . }}
       <h2> {{ .Page.Title }}</h2>
+    {{ end }}
     {{ block "main" . }}
     {{ end }}
     </MAIN>

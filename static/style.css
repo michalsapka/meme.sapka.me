@@ -51,6 +51,9 @@
     margin: auto;
     display: block;
   }
+  .next-link {
+    float: right;
+  }
   footer {
     width: 800px;
     max-width: 95%;
@@ -61,3 +64,4 @@
   footer div {
     text-align: center;
   }
+  
