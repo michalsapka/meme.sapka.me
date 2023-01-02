@@ -2,6 +2,8 @@ baseURL = 'https://memes.sapka.me'
 languageCode = 'en-us'
 title = "Michal's based meme collection"
 
+ignoreErrors = ["error-output-taxonomy"]
+
 [outputFormats.TXT]
 mediaType = "text/plain"
 sufix = "txt"
@@ -9,4 +11,7 @@ isPlainText = true
 
 [outputs]
     home                   = [ "HTML", "RSS", "TXT" ]
+    term                  = [ "HTML", "RSS", "TXT" ]
+    taxonomy                  = [ "HTML", "RSS", "TXT" ]
+
 
