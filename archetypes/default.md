@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 category: "meme"
 date: {{ .Date }}
-draft: true
+draft: false
 image: ""
 tags: ['sfw']
 ---
